@@ -8,7 +8,7 @@
 include_once 'common/DBConnector.php';
 include_once 'common/header.php';
 
-$result = mysqli_query($connection,"SELECT * FROM ckkaraoke");
+$result = mysqli_query($connection,"SELECT * FROM CKKaraoke");
 ?>
 
 
