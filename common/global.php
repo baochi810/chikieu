@@ -9,8 +9,8 @@
  */
 
 define("host" , "localhost");
-define("dbUsername" , "chi512ce_dbadmin");
-define("dbPassword" , "doLYmt-2811");
+define("dbUsername" , "root");
+define("dbPassword" , "123456");
 define("dbName" , "chi512ce_ckdb");
 define("dbUserTable" , "CKUser");
 

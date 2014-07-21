@@ -6,7 +6,7 @@
  * Time: 11:09 AM
  */
 
-require_once 'DBConnector.php';
+require_once 'common/DBConnector.php';
 
 $password=$_POST['password'];
 
