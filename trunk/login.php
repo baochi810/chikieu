@@ -19,7 +19,7 @@ $password = stripslashes($password);
 $password = mysqli_real_escape_string($connection,$password);
 
 
-$sql="SELECT * FROM ".dbUserTable." WHERE password='$password'";
+$sql="SELECT userid FROM ".dbUserTable." WHERE password='$password'";
 
 #echo $sql;
 if ($result=mysqli_query($connection,$sql))
@@ -29,10 +29,12 @@ if ($result=mysqli_query($connection,$sql))
 
     if($rowcount==1){
         echo "Okay";
-// Register $myusername, $mypassword and redirect to file "login_success.php"
-#    session_register("myusername");
-#    session_register("mypassword");
-#    header("location:login_success.php");
+
+    session_start();
+    $row = $result->fetch_array(MYSQLI_NUM);
+        echo "User id : $row[0]";
+    $_SESSION["userid"] = $row[0];
+    header("location:home.php");
     }
     else {
         echo "Bitch";
