@@ -7,8 +7,8 @@
  * Time: 9:30 AM
  */
 
-include_once 'header.php';
-require_once 'language.php';
+include_once 'common/header.php';
+require_once 'common/language.php';
 ?>
 
 
@@ -29,5 +29,5 @@ require_once 'language.php';
 
 
 <?php
-include_once 'footer.php'
+include_once 'common/footer.php'
 ?>
