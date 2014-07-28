@@ -19,7 +19,13 @@ include_once "common/header.php";
                     <a href="karaokelist.php">Karaoke List</a>
                 </td>
             </tr>
-
+			<tr>
+				<td>
+                    <a href="logout.php">Log out</a>
+                </td>
+            </tr>
+		</table>
+	</div>
 
 
 <?php

@@ -28,22 +28,22 @@ if ($result=mysqli_query($connection,$sql))
     $rowcount=mysqli_num_rows($result);
 
     if($rowcount==1){
-        echo "Okay";
 
     session_start();
     $row = $result->fetch_array(MYSQLI_NUM);
-        echo "User id : $row[0]";
+
     $_SESSION["userid"] = $row[0];
-    header("location:home.php");
+   // header("location:home.php");
+   echo "1";
     }
     else {
-        echo "Bitch";
+        echo "0";
     }
 
     mysqli_free_result($result);
 }
 else{
-    echo "Deo vao duoc";
+    echo "0";
 }
 
 
