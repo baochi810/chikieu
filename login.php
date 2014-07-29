@@ -33,6 +33,10 @@ if ($result=mysqli_query($connection,$sql))
     $row = $result->fetch_array(MYSQLI_NUM);
 
     $_SESSION["userid"] = $row[0];
+
+    // Add log login
+    $sql="INSERT INTO ckloginlog (logid, userid, date) VALUES ('NULL','".$row[0]."',now())";
+    mysqli_query($connection,$sql);
    // header("location:home.php");
    echo "1";
     }

@@ -5,10 +5,17 @@
  * Date: 7/21/14
  * Time: 9:25 PM
  */
+include_once 'common/functions.php';
+
+checkSession();
+
+
 include_once 'common/DBConnector.php';
 include_once 'common/header.php';
 
-$result = mysqli_query($connection,"SELECT * FROM CKKaraoke");
+addMenuCount("karaokelist.php", $connection);
+
+$result = mysqli_query($connection,"SELECT * FROM ckkaraoke");
 ?>
 
 
