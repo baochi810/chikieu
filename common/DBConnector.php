@@ -1,6 +1,6 @@
 <?php
-require_once 'common/global.php';
-require_once 'common/language.php';
+require_once 'global.php';
+require_once 'language.php';
 /**
  * Created by PhpStorm.
  * User: BaoChi

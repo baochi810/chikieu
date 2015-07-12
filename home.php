@@ -6,6 +6,7 @@
  * Time: 7:37 AM
  */
 
+require_once 'common/global.php';
 include_once 'common/functions.php';
 
 checkSession();
@@ -61,7 +62,7 @@ if ($result=mysqli_query($connection,$sql))
                 if ($result3 = mysqli_query($connection,$sql)){
                     $row2 = $result3->fetch_array(MYSQLI_NUM);
                     if ($row2){
-                        echo '<li><a class="ui-btn" href="/'.$row2[2].'"><h2>'.$row2[1].'</h2></a></li>';
+                        echo '<li><a class="ui-btn" href="/'.devPath.$row2[2].'"><h2>'.$row2[1].'</h2></a></li>';
                     }
 
                 }
@@ -82,7 +83,7 @@ if ($result=mysqli_query($connection,$sql))
 
 ?>
 
-        <li class="ui-last-child"><a class="ui-btn" href="logout.php">
+        <li class="ui-last-child"><a class="ui-btn" href="apis/logout.php">
                 <h2>Log out</h2>
     </a>
         </li>

@@ -11,7 +11,6 @@ include_once 'common/header.php';
 require_once 'common/language.php';
 
 
-
 ?>
 <script>
 $(document).ready(function(){
@@ -19,23 +18,24 @@ $(document).ready(function(){
 	// Neu nhan enter
 	$("input").keypress(function(event) {
 		if (event.which == 13) {
-			
+
 			event.preventDefault();
-			$.post("login.php",
+			$.post("apis/login.php",
 			{
-				password:$("#pass_field").val()
+				password:$("#pass_field").val(),
+                applogin:"0"
 			},
 			function(data,status){
 				if ($.trim(data) == '1'){
-					window.location.replace("home.php");
+					window.location.replace("inout.php");
 				}
 				else
 				{
 					$("#result_p").text('Wrong pass, bitch');
 				}
-					
 
-				
+
+
 			});
 		}
 	});
@@ -43,13 +43,14 @@ $(document).ready(function(){
 	
 	// Neu nhan nut
 	$("#btn_login").click(function(){
-		$.post("login.php",
+		$.post("apis/login.php",
 		{
-			password:$("#pass_field").val()
+			password:$("#pass_field").val(),
+            applogin:"0"
 		},
 		function(data,status){
 			if ($.trim(data) == '1'){
-				window.location.replace("home.php");
+				window.location.replace("inout.php");
 			}
 			else
 			{

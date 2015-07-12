@@ -13,5 +13,7 @@ define("dbUsername" , "root");
 define("dbPassword" , "123456");
 define("dbName" , "chi512ce_ckdb");
 define("dbUserTable" , "CKUser");
+define("dbInOutTable" , "CKinout");
+define("devPath","chikieu/");
 
 ?>
