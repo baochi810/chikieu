@@ -69,82 +69,14 @@ include_once "../common/header.php";
             var jpage = parseInt(getUrlParameter("page"),10);
             jpage++;
 
-            $.post("../apis/inout/inoutlist.php",
-                {
-                    page:jpage
-                },
-                function(data,status){
-                    if ($.trim(data) == '1'){
-                        window.location.replace("home.php");
-                    }
-                    else
-                    {
-                        $("#tbodyContent").empty();
-
-                        $.each(data, function (index, value) {
-                            var cl = "";
-                            var typename = "";
-                            if (value.type == '0'){
-                                cl = "<td style='font-size:20px;color: #00e516'><b>";
-                                typename ="In";
-                            } else if (value.type == '1'){
-                                cl = "<td style='font-size:20px;color: #E80000'><b>";
-                                typename ="Out";
-                            } else if (value.type == '2'){
-                                cl = "<td style='font-size:20px;color: #00e516'><b>";
-                                typename ="Debt";
-                            } else {
-                                cl = "<td style='font-size:20px;color: #E80000'><b>";
-                                typename ="Pay Debt";
-                            }
-                            $('#table-custom-2 > tbody:last').append('<tr>' + cl + $.number(parseInt(value.money,10)) + '</b><a href="confirmdel.php?id='+value.id+'" rel="external"><img src="../resource/del_icon.png" /></a> </td><td>' + value.content + '</td><td style="font-size:10px; color:#98949a"><i>' + value.date + '</i></td></tr>');
-                        });
-                    }
-
-
-
-                },"json");
+            window.location.replace("listview.php?page=" + jpage);
         });
 
         $("#btn_next2").click(function(){
             var jpage = parseInt(getUrlParameter("page"),10);
             jpage++;
 
-            $.post("../apis/inout/inoutlist.php",
-                {
-                    page:jpage
-                },
-                function(data,status){
-                    if ($.trim(data) == '1'){
-                        window.location.replace("home.php");
-                    }
-                    else
-                    {
-                        $("#tbodyContent").empty();
-
-                        $.each(data, function (index, value) {
-                            var cl = "";
-                            var typename = "";
-                            if (value.type == '0'){
-                                cl = "<td style='font-size:20px;color: #00e516'><b>";
-                                typename ="In";
-                            } else if (value.type == '1'){
-                                cl = "<td style='font-size:20px;color: #E80000'><b>";
-                                typename ="Out";
-                            } else if (value.type == '2'){
-                                cl = "<td style='font-size:20px;color: #00e516'><b>";
-                                typename ="Debt";
-                            } else {
-                                cl = "<td style='font-size:20px;color: #E80000'><b>";
-                                typename ="Pay Debt";
-                            }
-                            $('#table-custom-2 > tbody:last').append('<tr>' + cl + $.number(parseInt(value.money,10)) + '</b><a href="confirmdel.php?id='+value.id+'" rel="external"><img src="../resource/del_icon.png" /></a> </td><td>' + value.content + '</td><td style="font-size:10px; color:#98949a"><i>' + value.date + '</i></td></tr>');
-                        });
-                    }
-
-
-
-                },"json");
+            window.location.replace("listview.php?page=" + jpage);
         });
 
         $("#btn_previous").click(function(){
@@ -153,41 +85,7 @@ include_once "../common/header.php";
             if (jpage < 0)
             jpage = 0;
 
-            $.post("../apis/inout/inoutlist.php",
-                {
-                    page:jpage
-                },
-                function(data,status){
-                    if ($.trim(data) == '1'){
-                        window.location.replace("home.php");
-                    }
-                    else
-                    {
-                        $("#tbodyContent").empty();
-
-                        $.each(data, function (index, value) {
-                            var cl = "";
-                            var typename = "";
-                            if (value.type == '0'){
-                                cl = "<td style='font-size:20px;color: #00e516'><b>";
-                                typename ="In";
-                            } else if (value.type == '1'){
-                                cl = "<td style='font-size:20px;color: #E80000'><b>";
-                                typename ="Out";
-                            } else if (value.type == '2'){
-                                cl = "<td style='font-size:20px;color: #00e516'><b>";
-                                typename ="Debt";
-                            } else {
-                                cl = "<td style='font-size:20px;color: #E80000'><b>";
-                                typename ="Pay Debt";
-                            }
-                            $('#table-custom-2 > tbody:last').append('<tr>' + cl + $.number(parseInt(value.money,10)) + '</b><a href="confirmdel.php?id='+value.id+'" rel="external"><img src="../resource/del_icon.png" /></a> </td><td>' + value.content + '</td><td style="font-size:10px; color:#98949a"><i>' + value.date + '</i></td></tr>');
-                        });
-                    }
-
-
-
-                },"json");
+            window.location.replace("listview.php?page=" + jpage);
         });
 
         $("#btn_previous2").click(function(){
@@ -196,41 +94,7 @@ include_once "../common/header.php";
             if (jpage < 0)
                 jpage = 0;
 
-            $.post("../apis/inout/inoutlist.php",
-                {
-                    page:jpage
-                },
-                function(data,status){
-                    if ($.trim(data) == '1'){
-                        window.location.replace("home.php");
-                    }
-                    else
-                    {
-                        $("#tbodyContent").empty();
-
-                        $.each(data, function (index, value) {
-                            var cl = "";
-                            var typename = "";
-                            if (value.type == '0'){
-                                cl = "<td style='font-size:20px;color: #00e516'><b>";
-                                typename ="In";
-                            } else if (value.type == '1'){
-                                cl = "<td style='font-size:20px;color: #E80000'><b>";
-                                typename ="Out";
-                            } else if (value.type == '2'){
-                                cl = "<td style='font-size:20px;color: #00e516'><b>";
-                                typename ="Debt";
-                            } else {
-                                cl = "<td style='font-size:20px;color: #E80000'><b>";
-                                typename ="Pay Debt";
-                            }
-                            $('#table-custom-2 > tbody:last').append('<tr>' + cl + $.number(parseInt(value.money,10)) + '</b><a href="confirmdel.php?id='+value.id+'" rel="external"><img src="../resource/del_icon.png" /></a> </td><td>' + value.content + '</td><td style="font-size:10px; color:#98949a"><i>' + value.date + '</i></td></tr>');
-                        });
-                    }
-
-
-
-                },"json");
+            window.location.replace("listview.php?page=" + jpage);
         });
 
         $("#btn_back").click(function(){
