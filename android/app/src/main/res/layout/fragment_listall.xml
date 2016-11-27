@@ -1,0 +1,81 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chikieu.thuchi.listall">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom">
+
+            <Button
+                android:text="Back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/back"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="Previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/previous"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="Next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/next"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray">
+
+            <TextView
+                android:text="Money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+            <TextView
+                android:text="Content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+            <TextView
+                android:text="Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/list" />
+
+    </LinearLayout>
+
+
+</FrameLayout>
