@@ -106,6 +106,13 @@ public class mainmenu extends Fragment {
                 fragmentManager.beginTransaction().add(R.id.activity_main, new debt(), "debt").remove(mainFragment).addToBackStack("menu").commit();
             }
         });
+        ((Button)rootView.findViewById(R.id.paydebt)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().add(R.id.activity_main, new paydebt(), "paydebt").remove(mainFragment).addToBackStack("menu").commit();
+            }
+        });
         ((Button)rootView.findViewById(R.id.chart)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
