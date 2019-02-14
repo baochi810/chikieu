@@ -15,9 +15,7 @@ $money=$_POST['money'];
 $content=$_POST['content'];
 $specialtype=$_POST['specialtype'];
 
-date_default_timezone_set('Asia/Ho_Chi_Minh');
-
-$sql="INSERT INTO ".dbInOutTable." (inoutid, userid, type, specialtype, content, money, date) VALUES (NULL,".$_SESSION["userid"].",".$type.",".$specialtype.",'".$content."',".$money."000,'".date('Y-m-d H:i:s')."')";
+$sql="INSERT INTO ".dbInOutTable." (inoutid, userid, type, specialtype, content, money, date) VALUES (NULL,".$_SESSION["userid"].",".$type.",".$specialtype.",'".$content."',".$money."000,now())";
 
 mysqli_query($connection,$sql);
 // header("location:home.php");

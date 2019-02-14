@@ -35,7 +35,7 @@ if ($result=mysqli_query($connection,$sql))
     $_SESSION["userid"] = $row[0];
 
     // Add log login
-    $sql="INSERT INTO ckloginlog (logid, userid, date) VALUES ('NULL','".$row[0]."',now())";
+    $sql="INSERT INTO ckloginlog (logid, userid, date) VALUES (NULL,".$row[0].",now())";
     mysqli_query($connection,$sql);
    // header("location:home.php");
    echo "1";

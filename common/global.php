@@ -1,4 +1,3 @@
-
 <?php
 
 /**
@@ -9,11 +8,11 @@
  */
 
 define("host" , "localhost");
-define("dbUsername" , "root");
-define("dbPassword" , "123456");
-define("dbName" , "chi512ce_ckdb");
+define("dbUsername" , "npgbchi");
+define("dbPassword" , "doLYmt-2811");
+define("dbName" , "dbck");
 define("dbUserTable" , "CKUser");
-define("dbInOutTable" , "CKinout");
+define("dbInOutTable" , "ckinout");
 define("devPath","chikieu/");
 
 ?>

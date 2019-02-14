@@ -18,7 +18,7 @@ $applogin=$_POST['applogin'];
 
 $password = stripslashes($password);
 $password = mysqli_real_escape_string($connection,$password);
-
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 $sql="SELECT userid FROM ".dbUserTable." WHERE password='$password'";
 
@@ -36,14 +36,15 @@ if ($result=mysqli_query($connection,$sql))
     $_SESSION["userid"] = $row[0];
 
     // Add log login
-    $sql="INSERT INTO ckloginlog (logid, userid, date) VALUES ('NULL','".$row[0]."',now())";
+    $sql="INSERT INTO ckloginlog (logid, userid, date) VALUES (NULL,".$row[0].",'".date('Y-m-d H:i:s')."')";
     mysqli_query($connection,$sql);
    // header("location:home.php");
     if ($applogin == "0"){
         echo "1";
     } else if ($applogin == "1"){
+
         header("Location: http://chikieu.com/inout.php");
-        die();
+        exit();
         }
 
     }
@@ -54,7 +55,7 @@ if ($result=mysqli_query($connection,$sql))
     mysqli_free_result($result);
 }
 else{
-    echo "0";
+    echo "3";
 }
 
 

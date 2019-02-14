@@ -1,0 +1,2 @@
+[24-Nov-2016 18:16:07 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/baochi810/public_html/apis/inout/inoutchart.php on line 37
+[24-Nov-2016 18:17:51 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/baochi810/public_html/apis/inout/inoutchart.php on line 37

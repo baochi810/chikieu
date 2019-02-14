@@ -14,7 +14,6 @@ require_once "../../common/DBConnector.php";
 
 
 $month = $_POST['month'];
-//$month = 3;
 
 // Total income
 //SELECT sum(money) FROM `ckinout` WHERE (type='2') or (type = '0')
@@ -28,10 +27,10 @@ $month = $_POST['month'];
 // Total pay debt
 //SELECT sum(money) FROM `ckinout` WHERE (type='3')
 
-$month = $month ."/".date('d/Y');
+$month = $month . '/1/2015';
 
 $fd = date('Y-m-01', strtotime($month));
-$ld = date('Y-m-31', strtotime($month));
+$ld = date('Y-m-t', strtotime($month));
 
 $sql = "SELECT sum(money) FROM ckinout WHERE ((type=2) or (type =0)) and (date <= '" . $ld . "')";
 $result = mysqli_query($connection, $sql);
@@ -58,7 +57,7 @@ $paydebt = (int)$row[0];
 //$fd = new DateTime('2015-07-01');
 //$ld = new DateTime('2015-07-31');
 
-$sql = "SELECT sum(money) FROM ckinout WHERE (type=1 or (type='2' and specialtype='1')) and (date >= '" . $fd . "' and date <= '" . $ld . "')";
+$sql = "SELECT sum(money) FROM ckinout WHERE (type=1 or type=3 or (type='2' and specialtype='1')) and (date >= '" . $fd . "' and date <= '" . $ld . "')";
 if ($result = mysqli_query($connection, $sql)) {
     $rowcount = mysqli_num_rows($result);
     if ($rowcount >= 1) {
@@ -87,7 +86,7 @@ if ($result = mysqli_query($connection, $sql)) {
 $str = '{"debt":"' . ($debt - $paydebt) . '","hand":"' . ($income - $outcome) . '","moutcome":"' . $moutcome . '","mfoutcome":"' . $mfoutcome . '","list":[';
 
 
-$sql = "SELECT content, money , DATE_FORMAT(date, '%d/%m/%Y') AS 'returndate', date FROM ckinout WHERE (type=1 or type=3 or (type='2' and specialtype='1')) and money >= 500000 and (date >= '" . $fd . "' and date <= '" . $ld . "') ORDER BY date ASC";
+$sql = "SELECT content, money, date FROM ckinout WHERE (type=1 or type=3 or (type='2' and specialtype='1')) and money >= 500000 and (date >= '" . $fd . "' and date <= '" . $ld . "') ORDER BY date ASC";
 
 
 if ($result = mysqli_query($connection, $sql)) {

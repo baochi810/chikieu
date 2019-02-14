@@ -19,7 +19,7 @@ require_once "../../common/DBConnector.php";
 $page=$_POST['page'];
 $page = $page*20;
 
-$sql="SELECT inoutid, type, content, money, DATE_FORMAT(date, '%d/%m/%Y') AS 'returndate', date FROM ckinout ORDER BY date DESC LIMIT ".$page.",20";
+$sql="SELECT inoutid, type, content, money, date FROM ckinout ORDER BY date DESC LIMIT ".$page.",20";
 
 
 if ($result=mysqli_query($connection,$sql))
