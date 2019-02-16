@@ -52,6 +52,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/listview" />
+
+        <Button
+            android:id="@+id/peopledebt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PEOPLE DEBT" />
     </LinearLayout>
 
 </FrameLayout>

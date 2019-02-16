@@ -137,6 +137,35 @@ public class mainmenu extends Fragment {
                 new ListTask().execute("http://chikieu.com/apis/inout/inoutlist.php", query);
             }
         });
+        ((Button)rootView.findViewById(R.id.peopledebt)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Uri.Builder builder = new Uri.Builder()
+                        .appendQueryParameter("page", "0");
+                String query = builder.build().getEncodedQuery();
+
+                new DebtListTask().execute("http://chikieu.com/apis/debt/debtlist.php", query);
+            }
+        });
+    }
+
+    class DebtListTask extends AsyncTask<String, Void, String> {
+
+
+        protected String doInBackground(String... params) {
+            try {
+                return Helper.getData(params[0], params[1]);
+            } catch (Exception e) {
+
+                return null;
+            }
+        }
+
+        protected void onPostExecute(String feed) {
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().add(R.id.activity_main, peopledebt.newInstance(feed,""), "peopledebt").remove(mainFragment).addToBackStack("menu").commit();
+        }
     }
 
     class ListTask extends AsyncTask<String, Void, String> {
